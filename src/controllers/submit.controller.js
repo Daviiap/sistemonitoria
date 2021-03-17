@@ -1,15 +1,15 @@
-const { json } = require('express')
-const express = require('express')
-const router = express.Router()
+const FormModel = require('../models/form.model')
 
-router.use(json())
-
-router.get('/', (req, res) => {
-  return res.status(200).json({ status: 'running' })
-})
-
-router.post('/submit', (req, res) => {
+module.exports = async (req, res) => {
   const { matricula, nome, contato, description, image } = req.body
+
+  await FormModel.create({
+    matricula,
+    nome,
+    contato,
+    description,
+    image
+  })
 
   const date = new Date()
   console.log('--------------------------------------------------')
@@ -21,6 +21,4 @@ router.post('/submit', (req, res) => {
 
 
   return res.status(200).json({ matricula, nome, contato, description, image })
-})
-
-module.exports = router
+}
