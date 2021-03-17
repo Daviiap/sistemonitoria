@@ -4,7 +4,7 @@ const app = express()
 
 const routes = require('./routes')
 
-app.use(cors())
+// app.use(cors())
 app.listen(8080, () => {
   console.log('Server running on port 8080.')
 })
