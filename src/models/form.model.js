@@ -6,7 +6,8 @@ const body = {
   nome: String,
   contato: String,
   description: String,
-  image: String
+  image: String,
+  closed: Boolean
 };
 
 const options = {

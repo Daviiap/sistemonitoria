@@ -1,6 +1,6 @@
 const FormModel = require('../models/form.model')
 
-module.exports = async (req, res) => {
+const submit = async (req, res) => {
   const { matricula, nome, contato, description, image } = req.body
 
   await FormModel.create({
@@ -22,3 +22,5 @@ module.exports = async (req, res) => {
 
   return res.status(200).json({ matricula, nome, contato, description, image })
 }
+
+module.exports = submit
