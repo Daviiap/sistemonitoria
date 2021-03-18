@@ -7,7 +7,10 @@ const body = {
   contato: String,
   description: String,
   image: String,
-  closed: Boolean
+  closed: {
+    type: Boolean,
+    default: false
+  }
 };
 
 const options = {
