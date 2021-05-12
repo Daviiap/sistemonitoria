@@ -4,6 +4,7 @@ const submit = require('./controllers/submit.controller')
 const getAll = require('./controllers/getAll.controller')
 const get = require('./controllers/get.controller')
 const update = require('./controllers/update.controller')
+const testSQS = require('./controllers/testSQS.controller');
 
 const router = express.Router()
 
@@ -17,5 +18,6 @@ router.post('/submit', submit)
 router.get('/getAll', getAll)
 router.get('/get/:submissionId', get)
 router.post('/update/:submissionId', update)
+router.post('/sqs', testSQS)
 
 module.exports = router
